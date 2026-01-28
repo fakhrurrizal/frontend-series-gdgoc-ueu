@@ -47,7 +47,7 @@ export default defineConfig({
 ```bash
 @import "tailwindcss";
 
-## Kamu bisa hapus semua isi dari index.css agar kita bisa custom sendiri
+## Kamu bisa hapus semua styling bawaan di index.css agar kita bisa custom sendiri
 ```
 
 ---
