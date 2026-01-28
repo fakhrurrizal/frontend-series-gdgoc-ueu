@@ -25,8 +25,9 @@ npm create vite@latest frontend-series -- --template react
 # 2. Masuk ke folder project
 cd frontend-series
 
-# 3. Install dependencies dasar
-npm install
+# 3. Tes project
+npm run dev
+```
 
 ## Langkah 2: Konfigurasi Tailwind CSS
 Agar tampilan chatbot kita cantik dan modern tanpa perlu menulis file CSS manual yang panjang, kita akan menggunakan Tailwind CSS.
@@ -36,7 +37,24 @@ Jalankan perintah berikut di terminal (pastikan kamu masih berada di dalam folde
 
 ```bash
 # Install Tailwind CSS dan tools pendukungnya
-npm install -D tailwindcss postcss autoprefixer
+npm install tailwindcss @tailwindcss/vite
 
-# Generate file konfigurasi (tailwind.config.js dan postcss.config.js)
-npx tailwindcss init -p
+```
+### 2. Tambahkan plugin @tailwindcss/vite ke konfigurasi Vite (vite.config.js).
+```bash
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+        react(),
+        tailwindcss(),
+    ],
+})
+```
+
+### 3. Tambahkan @import ke file CSS yang mengimpor Tailwind CSS.
+```bash
+@import "tailwindcss";
+```
