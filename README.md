@@ -43,9 +43,11 @@ export default defineConfig({
 })
 ```
 
-### 3. Tambahkan @import ke file CSS yang mengimpor Tailwind CSS.
+### 3. Tambahkan @import ke file index.css yang mengimpor Tailwind CSS.
 ```bash
 @import "tailwindcss";
+
+## Kamu bisa hapus isi dari index.css agar kita bisa custom sendiri
 ```
 
 ---
@@ -90,7 +92,7 @@ Buka `src/App.jsx` dan ganti isinya dengan:
 
 ### 2. Isi Kode App.jsx
 ```jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BubbleChat from './components/BubbleChat';
 
 function App() {
@@ -104,7 +106,7 @@ function App() {
     e.preventDefault();
     if (!inputValue.trim()) return;
 
-    const userMsg = { text: inputValue, sender: "You", isAi: false };
+    const userMsg = { text: inputValue, sender: "Kamu", isAi: false };
     setMessages((prev) => [...prev, userMsg]);
     setInputValue("");
 
@@ -135,13 +137,13 @@ function App() {
         ))}
       </div>
 
-      <form onSubmit={handleSend} className="p-4 border-t flex gap-2 bg-white">
+      <form onSubmit={handleSend} className="p-4  flex gap-2 bg-white">
         <input 
           type="text" 
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Tulis pesan..."
-          className="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+          className="flex-1 border text-black border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
         />
         <button 
           type="submit"
