@@ -1,5 +1,5 @@
-# 🚀 Workshop: Build Your First AI Chatbot UI
-**Front-End Series #1: Introduction to ReactJS**
+# Front-End Series #1
+**Introduction to ReactJS**
 **GDG on Campus - Universitas Esa Unggul**
 
 ---
